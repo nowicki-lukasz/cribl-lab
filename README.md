@@ -16,3 +16,15 @@
 | MinIO | http://minio:9000 | |
 | RedPanda| redpanda-0:9092 </br> redpanda-1:9092 </br> redpanda-2:9092
 | OpenObserve | openobserve:5080 </br> openobserve:5081
+
+## Usage
+### Download all required images
+```sh
+$ export DOCKER_DEFAULT_PLATFORM=linux/amd64 # required only on Apple silicon
+$ docker compose pull # Alternative: podman compose pull
+```
+
+### Run stack
+```sh
+$ docker compose up # Alternative: podman compose up
+```
