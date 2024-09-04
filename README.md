@@ -20,26 +20,26 @@ It provides a configuration to set up local virtual laboratory environment desig
 
 ## Services
 
-#### 1. Cribl Leader (aka. Master) node
-* This instance serves as the central point for monitoring and configuring Worker nodes.
+### Cribl Leader (aka. Master) node
+This instance serves as the central point for monitoring and configuring Worker nodes.
 
-#### 2. Cribl Worker node (x2)
-* These worker nodes are used to distribute the load of data collection, data ingestion and data processing. Their configuration is fully managed by the **Cribl Leader** node.
+### Cribl Worker node (x2)
+These worker nodes are used to distribute the load of data collection, data ingestion and data processing. Their configuration is fully managed by the **Cribl Leader** node.
 
-#### 3. Splunk
-* **Splunk** is used to collect, index, and analyze logs and metrics.
+### Splunk
+**Splunk** is used to collect, index, and analyze logs and metrics.
 
-#### 4. MinIO
-* **MinIO** is used as a replacement for traditional distributed storage solutions, providing a scalable and high-performance object store. By leveraging the S3 API, it allows for seamless integration with wide range of applications that rely on AWS S3.
+### MinIO
+**MinIO** is used as a replacement for traditional distributed storage solutions, providing a scalable and high-performance object store. By leveraging the S3 API, it allows for seamless integration with wide range of applications that rely on AWS S3.
 
-#### 5. Redpanda (x3)
-* **Redpanda** is a cloud-native streaming platform that provides a drop-in replacement for Apache Kafka.
+### Redpanda (x3)
+**Redpanda** is a cloud-native streaming platform that provides a drop-in replacement for Apache Kafka.
 
-#### 6. Redpanda Console
-* Intuitive UI for monitoring, managing, and administrating Redpanda cluster.
+### Redpanda Console
+Intuitive UI for monitoring, managing, and administrating Redpanda cluster.
 
-#### 7. OpenObserve
-* **OpenObserve** is an opensource lightweight APM (Application Performance Monitoring) solution.
+### OpenObserve
+**OpenObserve** is an opensource lightweight APM (Application Performance Monitoring) solution.
 
 ---
 ## Cribl source/destination configuration
