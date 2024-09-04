@@ -1,6 +1,15 @@
 # CRIBL-LAB
 
-## Web User Interfaces
+This repository serves as learning playground for exploring different data processing technologies.
+It provides a configuration to set up local virtual laboratory environment designed for testing, learning and experimentation in a controlled, non-production, ephemeral setting.
+
+## Getting Started
+
+1. Clone this repository: `git clone https://github.com/nowicki-lukasz/cribl-lab.git`
+2. Navigate to the `cribl-lab` directory.
+3. Run `docker-compose up -d --build` to start the environment.
+4. Access web interfaces
+
 | Application | URL | Username | Password |
 |-|-|-|-|
 | Cribl | http://localhost:19000 | admin | admin |
@@ -16,15 +25,3 @@
 | MinIO | http://minio:9000 | |
 | RedPanda| redpanda-0:9092 </br> redpanda-1:9092 </br> redpanda-2:9092
 | OpenObserve | openobserve:5080 </br> openobserve:5081
-
-## Usage
-### Download all required images
-```sh
-$ export DOCKER_DEFAULT_PLATFORM=linux/amd64 # required only on Apple silicon
-$ docker compose pull # Alternative: podman compose pull
-```
-
-### Run stack
-```sh
-$ docker compose up # Alternative: podman compose up
-```
