@@ -1,0 +1,12 @@
+services:
+  openobserve:
+    image: openobserve/openobserve:v0.10.8
+    environment:
+      ZO_ROOT_USER_EMAIL: "root@example.com"
+      ZO_ROOT_USER_PASSWORD: "Complexpass#123"
+    networks:
+      - default
+      - internal_net
+    ports:
+      - 5080:5080
+      - 5081:5081

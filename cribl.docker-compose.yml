@@ -1,0 +1,53 @@
+volumes:
+  cribl-master:
+  cribl-worker1:
+  cribl-worker2:
+
+services:
+  criblmaster:
+    image: docker.io/cribl/cribl:4.8.1
+    platform: "linux/amd64"
+    restart: unless-stopped
+    hostname: criblmaster
+    environment:
+      - CRIBL_DIST_MODE=master
+      - CRIBL_DIST_MASTER_URL=tcp://${CRIBL_DIST_TOKEN:-criblmaster}@0.0.0.0:4200
+    volumes:
+      - cribl-master:/opt/cribl/config-volume
+    networks:
+      - internal_net
+      - default
+    ports:
+      - 19000:9000
+  
+  criblworker1:
+    image: docker.io/cribl/cribl:4.8.1
+    platform: "linux/amd64"
+    restart: unless-stopped
+    environment:
+      - CRIBL_DIST_MODE=worker
+      - CRIBL_DIST_MASTER_URL=tcp://${CRIBL_DIST_TOKEN:-criblmaster}@criblmaster:4200
+    volumes:
+      - cribl-worker1:/opt/cribl/config-volume
+    networks:
+      - default
+      - internal_net
+    depends_on: 
+      - criblmaster
+    hostname: criblworker1
+  
+  criblworker2:
+    image: docker.io/cribl/cribl:4.8.1
+    platform: "linux/amd64"
+    restart: unless-stopped
+    environment:
+      - CRIBL_DIST_MODE=worker
+      - CRIBL_DIST_MASTER_URL=tcp://${CRIBL_DIST_TOKEN:-criblmaster}@criblmaster:4200
+    volumes:
+      - cribl-worker2:/opt/cribl/config-volume
+    networks:
+      - default
+      - internal_net
+    depends_on: 
+      - criblmaster
+    hostname: criblworker2

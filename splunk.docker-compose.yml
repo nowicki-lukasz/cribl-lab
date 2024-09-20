@@ -1,0 +1,13 @@
+services:
+  splunk:
+    image: splunk/splunk:9.3.0
+    platform: "linux/amd64"
+    environment:
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_PASSWORD=superadmin
+    networks:
+      - default
+      - internal_net
+    ports:
+      - 8000:8000
+      - 8088:8088
