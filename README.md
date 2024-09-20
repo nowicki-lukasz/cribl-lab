@@ -7,8 +7,11 @@ It provides a configuration to set up local virtual laboratory environment desig
 
 1. Clone this repository: `git clone https://github.com/nowicki-lukasz/cribl-lab.git`
 2. Navigate to the `cribl-lab` directory.
-3. Run `docker-compose up -d --build` to start the environment.
-4. Access web interfaces
+3. Run `make pull` to pull all images.
+4. Run `make run-all` to start all services.
+5. Run `make stop` to stop all services.
+6. Run `make down` to stop and remove containers and networks.
+7. Run `make destroy` to stop and remove containers, networks and volumes.
 
 | Application | URL | Username | Password |
 |-|-|-|-|
