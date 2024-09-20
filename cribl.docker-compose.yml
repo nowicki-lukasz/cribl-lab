@@ -5,7 +5,7 @@ volumes:
 
 services:
   criblmaster:
-    image: docker.io/cribl/cribl:4.8.1
+    image: docker.io/cribl/cribl:4.8.2
     platform: "linux/amd64"
     restart: unless-stopped
     hostname: criblmaster
@@ -21,7 +21,7 @@ services:
       - 19000:9000
   
   criblworker1:
-    image: docker.io/cribl/cribl:4.8.1
+    image: docker.io/cribl/cribl:4.8.2
     platform: "linux/amd64"
     restart: unless-stopped
     environment:
@@ -37,7 +37,7 @@ services:
     hostname: criblworker1
   
   criblworker2:
-    image: docker.io/cribl/cribl:4.8.1
+    image: docker.io/cribl/cribl:4.8.2
     platform: "linux/amd64"
     restart: unless-stopped
     environment:
